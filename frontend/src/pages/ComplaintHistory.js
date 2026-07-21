@@ -1,50 +1,64 @@
+import React from "react";
+
 function ComplaintHistory() {
+  const complaints = [
+    {
+      id: 101,
+      location: "Bus Stand",
+      waste: "Plastic Waste",
+      status: "Pending",
+    },
+    {
+      id: 102,
+      location: "Market",
+      waste: "Organic Waste",
+      status: "Completed",
+    },
+    {
+      id: 103,
+      location: "School Road",
+      waste: "Paper Waste",
+      status: "Pending",
+    },
+  ];
 
-    return (
+  return (
+    <div className="history-container">
+      <h2>Complaint History</h2>
 
-        <div className="container">
+      <table className="history-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Location</th>
+            <th>Waste Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
 
-            <div className="card">
-
-                <h2>Complaint History</h2>
-
-                <table>
-
-                    <tr>
-                        <th>ID</th>
-                        <th>Location</th>
-                        <th>Waste Type</th>
-                        <th>Status</th>
-                    </tr>
-
-                    <tr>
-                        <td>101</td>
-                        <td>Bus Stand</td>
-                        <td>Plastic Waste</td>
-                        <td>Pending</td>
-                    </tr>
-
-                    <tr>
-                        <td>102</td>
-                        <td>Market</td>
-                        <td>Organic Waste</td>
-                        <td>Completed</td>
-                    </tr>
-
-                    <tr>
-                        <td>103</td>
-                        <td>School Road</td>
-                        <td>Paper Waste</td>
-                        <td>Pending</td>
-                    </tr>
-
-                </table>
-
-            </div>
-
-        </div>
-
-    );
+        <tbody>
+          {complaints.map((complaint) => (
+            <tr key={complaint.id}>
+              <td>{complaint.id}</td>
+              <td>{complaint.location}</td>
+              <td>{complaint.waste}</td>
+              <td>
+                <span
+                  className={
+                    complaint.status === "Completed"
+                      ? "completed"
+                      : "pending"
+                  }
+                >
+                  {complaint.status}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default ComplaintHistory;

@@ -1,40 +1,43 @@
+import React from "react";
+
 function Analytics() {
+  return (
+    <div className="analytics-container">
+      <h2>Waste Analytics Dashboard</h2>
 
-    return (
-
-        <div className="container">
-
-            <div className="card">
-
-                <h2>Waste Analytics</h2>
-
-                <h3>Total Complaints : 15</h3>
-
-                <br />
-
-                <h3>Pending : 5</h3>
-
-                <br />
-
-                <h3>Completed : 10</h3>
-
-                <br />
-
-                <h3>Plastic Waste : 6</h3>
-
-                <br />
-
-                <h3>Organic Waste : 5</h3>
-
-                <br />
-
-                <h3>Paper Waste : 4</h3>
-
-            </div>
-
+      <div className="analytics-grid">
+        <div className="analytics-card">
+          <h3>Total Complaints</h3>
+          <p>15</p>
         </div>
 
-    );
+        <div className="analytics-card">
+          <h3>Pending</h3>
+          <p>5</p>
+        </div>
+
+        <div className="analytics-card">
+          <h3>Completed</h3>
+          <p>10</p>
+        </div>
+
+        <div className="analytics-card">
+          <h3>Plastic Waste</h3>
+          <p>6</p>
+        </div>
+
+        <div className="analytics-card">
+          <h3>Organic Waste</h3>
+          <p>5</p>
+        </div>
+
+        <div className="analytics-card">
+          <h3>Paper Waste</h3>
+          <p>4</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Analytics;
